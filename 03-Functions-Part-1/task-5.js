@@ -1,27 +1,27 @@
 function isPositive(n){
-    var k = false;
-    if(typeof(n)==='number'){
-        k=true;
+    var result = false;
+    if(typeof(n)==='number') {
+        if(n>0){
+            result=true;
+        }
     }
-    else{
+    else {
+        result=false;
         throw new Error('parameter type is not a Number');
     }
-    return k;
+    return result;
 }
 
-var arr=[1, 2, -4, 3, -9, -1, 7];
-var newarr=[];
-var len=arr.length
+const arr = [1, 2, -4, 3, -9, -1, 7];
+let newarr = [];
 
-for(let i=0; i<len; i++){
-    if(isPositive(arr[i])===true && arr[i] > 0) {
+for(var i=0; i<arr.length; i++) {
+    if(isPositive(arr[i])) {
         newarr.push(arr[i]);
     }
 }
 
-len=newarr.length;
-
-for(let i=0; i<len; i++){
-    console.log(newarr[i]);
-}
-
+console.log(newarr);
+console.log(isPositive(-3));
+console.log(isPositive(3));
+console.log(isPositive('s'));
