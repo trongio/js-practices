@@ -1,6 +1,8 @@
 let person = {
-    rate: '',
-    salary: '',
+    rate: null,
+    get salary(){
+        return this.rate*
+    }
 };
 
 Object.defineProperty(person, 'rate', {
@@ -9,10 +11,6 @@ Object.defineProperty(person, 'rate', {
     enumerable: false
 });
 
-Object.defineProperty(person, 'salary', {
-    value: this.rate,
-    writable: false
-}); 
 
 person.rate = 30;
 console.log(person.salary);
