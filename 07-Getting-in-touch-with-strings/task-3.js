@@ -7,7 +7,6 @@ const truncate = function(string, maxlength){
     }
     let result=string;
     if(string.length>maxlength){
-        result='';
         result=string.slice(0,maxlength-3)+'...';
     }
     return result;

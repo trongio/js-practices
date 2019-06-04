@@ -1,7 +1,8 @@
+var today = new Date();
 let person = {
     rate: null,
     get salary(){
-        return this.rate*
+        return this.rate*today.getDate();
     }
 };
 
