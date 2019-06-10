@@ -1,25 +1,21 @@
-class MyString{
-  constructor(){
+class MyString {
+
+  reverse(str) {
+      return str.split('').reverse().join('');
   }
 
-  reverse(){
-    return this._name;
+  ucFirst(str) {
+      return str[0].toUpperCase()+str.slice(1);
   }
-  ucFirst(){
-    
+
+  ucWords(str) {
+      return str.split(' ').map( value => this.ucFirst(value)).join(' ');
   }
 
 }
 
+const str = new MyString();
 
-
-var worker = new Worker('John', 'Smith', 10, 31);
-
-console.log(worker.getRate()); // print 10
-console.log(worker.getDays()); // print 31
-console.log(worker.getSalary()); // print 310 - because 10*31
-
-// Now using setters:
-worker.setRate(20); // increase rate
-worker.setDays(10); // decrease days
-console.log(worker.getSalary()); // print 200 - because 20*10
+console.log(str.reverse('abcde')); // print 'edcba'
+console.log(str.ucFirst('abcde')); // print 'Abcde'
+console.log(str.ucWords('abcde abcde abcde')); // print 'Abcde Abcde Abcde'
