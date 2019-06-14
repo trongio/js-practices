@@ -10,8 +10,8 @@ const getCustomers = (customers, source) => {
                 rej(`We don't have information about country for this customer: ${customer.name}`);
             }
 
-            return customer.verified ? {...customer, ...match} : customer
-        });
+            return {...customer, ...match};
+        }).filter(customer => customer.verified);
 
         return res(result);
     });
@@ -37,7 +37,7 @@ const countries = [
         country: 'usa'
     },
     {
-        id: 'A2',   
+        id: 'A2',
         country: 'poland'
     }
 ];
